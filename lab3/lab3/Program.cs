@@ -1,49 +1,60 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace lab3
 {
     internal class Program
     {
-        public static Figure[] figures = 
+        public static Figure[] figures =
         {
             new Rectangle()
             {
-
-            }
-        };
-
-        static void Main(string[] args)
-        { 
-            Console.WriteLine("Лабораторная работа №3 - Полиформизм");
-            Console.WriteLine("Выполнил - Леонавичус Даниил");
-
-            Figure f = new Rectangle()
-            {
-                Name = "Квадрат",
+                Name = "Квадрат №1",
                 Color = System.Drawing.Color.DarkRed,
                 Position = new System.Drawing.Point(30,30),
                 Width = 50, Height = 50
-            };
+            },
+            new Rectangle()
+            {
+                Name = "Квадрат №2",
+                Color = System.Drawing.Color.Green,
+                Position = new System.Drawing.Point(60,100),
+                Width = 100, Height = 100
+            },
+             new Rectangle()
+            {
+                Name = "Прямоугольник №1",
+                Color = System.Drawing.Color.Blue,
+                Position = new System.Drawing.Point(200,200),
+                Width = 100, Height = 50
+            }
 
-            Console.WriteLine("Фигура: " + f.Name);
-            Console.WriteLine("Площадь: " + f.GetArea());
-            Console.WriteLine("Цвет: " + f.Color);
-            Console.WriteLine("Положение фигуры: " + f.Position);
-            Console.WriteLine("Координаты центра: " + f.GetCenter());
+        };
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Лабораторная работа №3 - Полиформизм");
+            Console.WriteLine("Выполнил - Леонавичус Даниил");
 
             Form frm = new Form()
             {
                 Text = "Лабораторная работа №3 - Полиформизм",
-                Size = new System.Drawing.Size(800,600),
+                Size = new System.Drawing.Size(800, 600),
                 StartPosition = FormStartPosition.CenterScreen
             };
 
+            frm.Paint += Frm_Paint;
+
             Application.Run(frm);
+        }
+
+        private static void Frm_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (Figure f in figures)
+            {
+                f.Draw(e.Graphics);
+            }
         }
     }
 }
