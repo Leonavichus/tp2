@@ -27,42 +27,47 @@ namespace lab3
                 Name = "Круг №1",
                 Color = System.Drawing.Color.Green,
                 Position = new System.Drawing.Point(60,100),
-                Radius = 50
+                Radius = 20
             },
             new Triangle()
             {
                 Name = "Треугольник №1",
                 Color = System.Drawing.Color.Green,
-                Position = new System.Drawing.Point(130,40)
+                Position = new System.Drawing.Point(130,70),
+                Osnov = 100, Height=50
+
             },
             new Trapezoid()
             {
                 Name = "Трапеция №1",
                 Color = System.Drawing.Color.Red,
-                Position = new System.Drawing.Point(245,55)
+                Position = new System.Drawing.Point(245,55),
+                Osnov = 50, Height=20, Osnov2 = 20
             },
             new Rhombus()
             {
                 Name = "Ромб №1",
                 Color = System.Drawing.Color.BlueViolet,
-                Position = new System.Drawing.Point(355,45)
+                Position = new System.Drawing.Point(355,70),
+                Diagonal = 100,Diagonal2 =50
             },
             new Parallelogram()
             {
                 Name = "Параллелограмм №1",
                 Color = System.Drawing.Color.HotPink,
-                Position = new System.Drawing.Point(445,60)
+                Position = new System.Drawing.Point(470,60),
+                Storona = 100, Height = 50
             },
             new RegularPentagon()
             {
                 Name = "Правильный пятиугольник №1",
-                Color = System.Drawing.Color.HotPink,
+                Color = System.Drawing.Color.IndianRed,
                 Position = new System.Drawing.Point(25,25)
             },
             new RegularDecagon()
             {
                 Name = "Правильный десятиугольник №1",
-                Color = System.Drawing.Color.HotPink,
+                Color = System.Drawing.Color.Purple,
                 Position = new System.Drawing.Point(150,150),
             }
 

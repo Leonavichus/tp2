@@ -19,13 +19,14 @@ namespace lab3
 
         public override Point GetCenter()
         {
-            return new Point((int)(Position.X), (int)(Position.Y));
+            return new Point((int)(Position.X), (int)(Position.Y - Height / 2));
         }
 
         public override void Draw(Graphics gr)
         {
             Pen brush = new Pen(Color);
-            Point[] points = { new Point(430, 50), new Point(490, 50), new Point(460, 80), new Point(400, 80) };
+            Point[] points = { new Point(Position.X - (int)Storona / 2, Position.Y), new Point(Position.X - (int)Storona / 4, Position.Y - (int)Height), 
+                new Point(Position.X + (int)Storona / 2 + (int)Storona / 4, Position.Y - (int)Height), new Point(Position.X + (int)Storona / 2, Position.Y) };
             gr.DrawPolygon(brush, points);
             gr.DrawString(GetCenter().ToString(), new Font("Arial", 9), Brushes.Black, GetCenter());
         }
